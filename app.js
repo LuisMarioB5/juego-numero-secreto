@@ -86,7 +86,7 @@ function verificarIntento(){
         } else{
             asignarElementoTexto('p', 'El número secreto es mayor');
         }
-        
+
         // Se limpia el input para que el usuario pueda volver a intentar
         limpiarCaja();
     }          
@@ -96,7 +96,6 @@ function verificarIntento(){
 
     // Verificar si se han agotado los intentos máximos
     // Se muestran unos mensajes para indicarle al usuario que se le agotaron los intentos, y se activan y desactivan algunos botones
-
     if (intentos > intentosMaximos && numeroDeUsuario != numeroSecreto){
         asignarElementoTexto('p', `¡Se ${intentos == 2 ? 'agotó su único intento!' : `agotaron sus ${intentosMaximos} intentos!`}<br>El número secreto era: ${numeroSecreto}<br>Pulsa el botón "Nuevo Juego"`);
         document.getElementById('intentar').disabled = true;
@@ -144,16 +143,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let numeroInput = document.querySelector('#valorUsuario');
     numeroInput.focus();
 });
-
-
-// Este evento muestra en la consola el código clave de la tecla que se presiona en el live server de nuestro proyecto
-// NOTA: Descomentar este evento hará que el programa se dedique únicamente a capturar el código clave de cada tecla que se presione
-/*
-document.addEventListener('keydown', function(event) {
-    console.log('Código de tecla: ' + event.keyCode);
-    event.preventDefault();
-});
-*/
 
 // Establecer condiciones iniciales del juego al cargar la página
 condicionesIniciales();
